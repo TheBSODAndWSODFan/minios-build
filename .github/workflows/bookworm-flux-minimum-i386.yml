@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Clone minios-live Repository
       run: |
-        git clone --depth 1 -b branch_name --single-branch https://github.com/TheBSODAndWSODFan/minios-live.git
+        git clone --depth 1 -b fluxbox --single-branch https://github.com/TheBSODAndWSODFan/minios-live.git
         cd minios-live
 
     - name: Install dependencies
