@@ -9,8 +9,8 @@ jobs:
     steps:
     - name: Clone minios-live Repository
       run: |
-        git clone --depth 1 https://github.com/minios-linux/minios-live.git
-        cd minios-live
+        git clone --depth 1 https://github.com/TheBSODAndWSODFan/minios-live-lite.git
+        cd minios-live-lite
 
     - name: Install dependencies
       run: |
@@ -22,7 +22,7 @@ jobs:
 
     - name: Run build - Debian Sid XFCE Standard amd64
       run: |
-        cd minios-live
+        cd minios-live-lite
         echo "Starting build for Debian Sid XFCE Standard amd64..."
         sudo ./minios-cmd -d bookworm -a amd64 -de xfce -pv standard -aufs -dkms -kl
         sudo mkdir -p build/output/bookworm-xfce-standard-amd64
@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: minios-bookworm-xfce-standard-amd64
-        path: minios-live/build/output/bookworm-xfce-standard-amd64
+        path: minios-live-lite/build/output/bookworm-xfce-standard-amd64
 
   release:
     needs: build
